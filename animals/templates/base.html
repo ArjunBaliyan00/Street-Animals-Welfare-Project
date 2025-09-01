@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Street Animal Welfare{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            background-image: url('https://media2.giphy.com/media/3o85xAQ9wMdqxi2ebK/giphy.gif');
+             height:180px;
+        }
+        .navbar {
+            background: #343a40;
+            color: #fff;
+            padding: 10px 0;
+        }
+        .navbar a {
+            color: #fff;
+            padding: 0 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background: #495057;
+        }
+        .form-container {
+
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        footer {
+            background: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1{
+        color:#ffffff;
+        }
+        .collaboration{
+          color: white;
+
+          h4{
+        color: white;
+        }
+         h3{
+        color: white;
+        }
+         p{
+        color: white;
+        }
+         a{
+        color: blue;
+        }
+        h2{
+        color: white;
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Street Animal Welfare Initiative</h1>
+    </header>
+    <nav class="navbar navbar-dark">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'report_animal' %}">Report Animal</a>
+            <a href="{% url 'donate' %}">Donate</a>
+            <a href="{% url 'volunteer' %}">Volunteer</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'signup' %}">Sign Up</a>
+        {% endif %}
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        &copy; 2024 Street Animal Welfare Initiative
+
+<div class="collaboration">
+        <h2>JEEV WELFARE SOCIETY</h2>
+        <h4>Collaboration With Organization</h4>
+        <p>Jeev Welfare is a compassionate organization dedicated to the welfare of street animals. Located in Jalandhar,<br> this organization works tirelessly to rescue, rehabilitate, and provide shelter to stray animals, ensuring they receive<br> the care and attention they deserve. Jeev Welfare focuses on providing medical assistance, food, and a safe<br> environment for abandoned and injured animals, while also working to raise awareness about animal rights<br> and responsible pet ownership within the community. Their commitment to creating a better life for street<br> animals makes them an invaluable resource in the region.</p>
+        <h3>Contact us</h3>
+
+            <h4>Location: jalandhar,Punjab,India</h4>
+            <p>contact Number:+91 8284825556</p>
+         <a href="https://www.justdial.com/Jalandhar/Jeev-Welfare-Society-Neat-Kot-Sadiq-Power-House-Kot-Sadiq/0181PX181-X181-181009131501-X4V4_BZDET/gallery?tab=all&template=1&ncatid=&mncatname=&vrsn=3.0&bd=&pselect=91074784">JEEV WELFARE SOCIETY</a><br><br>
+     <a href="https://www.instagram.com/jeevwelfare/">Instagram</a><br>
+
+    </div>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

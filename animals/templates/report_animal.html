@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}Report Animal{% endblock %}
+
+{% block content %}
+<style>
+    .form-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        background-color: #fff;
+        background-image: url('https://thumbs.dreamstime.com/z/person-holding-mobile-phone-mockup-generative-ai-illustration-296926906.jpg');
+        background-size: cover;
+        background-position: center;
+
+    }
+    .form-container h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 1.5rem;
+        color: #333;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .form-control, .form-select {
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid #ced4da;
+    }
+    .form-control {
+        height: auto;
+    }
+    .btn {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+    body {
+        background-image: url('https://www.bhthechange.org/wp-content/uploads/2021/03/shutterstock_1070444933-2048x1366.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+</style>
+
+<div class="form-container">
+    <h2>Report an Animal</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_name" class="form-label">Name</label>
+            {{ form.name }}
+        </div>
+        <div class="form-group">
+            <label for="id_animal_type" class="form-label">Animal Type</label>
+            {{ form.animal_type }}
+        </div>
+        <div class="form-group">
+            <label for="id_location" class="form-label">Location</label>
+            {{ form.location }}
+        </div>
+        <div class="form-group">
+            <label for="id_description" class="form-label">Description</label>
+            {{ form.description }}
+        </div>
+        <div class="form-group">
+            <label for="id_description" class="form-label">Rescue needed</label>
+            {{ form.rescue_needed }}
+        </div><div class="form-group">
+            <label for="id_description" class="form-label">Medical condition</label>
+            {{ form.medical_condition }}
+        </div><div class="form-group">
+            <label for="id_description" class="form-label">Food supply needed</label>
+            {{ form.food_supply_needed }}
+        </div><div class="form-group">
+            <label for="id_description" class="form-label">Collar belt assigned</label>
+            {{ form.collar_belt_assigned }}
+        </div><div class="form-group">
+            <label for="id_description" class="form-label">collar belt number</label>
+            {{ form.collar_belt_number }}
+        </div><div class="form-group">
+            <label for="id_description" class="form-label">Date of rescue</label>
+            {{ form.date_rescued }}
+        </div>
+        <div class="form-group">
+            <label for="id_image" class="form-label">Image</label>
+            {{ form.image }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Report</button>
+    </form>
+</div>
+{% endblock %}

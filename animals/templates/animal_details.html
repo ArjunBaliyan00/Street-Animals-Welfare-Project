@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal Details</title>
+</head>
+<body>
+    <h1>Animal Details</h1>
+    <p><strong>Name:</strong> {{ animal.name }}</p>
+    <p><strong>Type:</strong> {{ animal.animal_type }}</p>
+    <p><strong>Description:</strong> {{ animal.description }}</p>
+    <p><strong>Reported By:</strong> {{ animal.added_by.username }}</p>
+    <p><strong>Date Reported:</strong> {{ animal.date_rescued }}</p>
+
+    {% if animal.image %}
+        <img src="{{ animal.image.url }}" alt="Animal Image">
+    {% endif %}
+</body>
+</html>

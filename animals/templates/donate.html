@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Donate{% endblock %}
+{%load static %}
+{% block content %}
+<style>
+    .form-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        background-color: #fff;
+        background-image: url('https://plus.unsplash.com/premium_photo-1683140538884-07fb31428ca6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');
+        background-size: cover;
+        background-position: center;
+
+    }
+    .form-container h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 1.5rem;
+        color: #333;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .form-control {
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid #ced4da;
+    }
+    .btn {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+    body {
+        background-image: url('https://img.capital.com/imgs/articles/1920x2000x0/shutterstock_1685300815_0.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+</style>
+
+<div class="form-container">
+    <h2>Donate</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_donor_name" class="form-label">Donor Name</label>
+            {{ form.donor_name }}
+        </div>
+
+        <div style="float:right;">
+            <img src="{% static 'images/qr-code.jpeg' %}" alt="qr-code-image" width="230px" height="200px">
+        </div>
+        <div class="form-group">
+            <label for="id_email" class="form-label">Email</label>
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            <label for="id_amount" class="form-label">Amount</label>
+            {{ form.amount }}
+        </div>
+        <div class="form-group">
+            <label for="id_message" class="form-label">Message</label>
+            {{ form.message }}
+        </div>
+        <div class="form-group">
+            <label for="id_image" class="form-label">Message</label>
+            {{ form.image }}
+        </div>
+        <button type="submit" class="btn btn-primary">Donate</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us{% endblock %}
+{%load static %}
+{% block content %}
+<style>
+
+ body {
+        background-image: url('https://img.freepik.com/free-photo/veterinarian-taking-care-pet-dog_23-2149198633.jpg?w=1060&t=st=1728453425~exp=1728454025~hmac=800629d154dc39d20c680f9d0db11d2c630516e0e91c430f2e33007cadb96aaf.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .about-container {
+        max-width: 900px;
+        margin: auto;
+        padding: 60px 20px;
+        text-align: center;
+    }
+    .about-container h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .about-container p {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    .about-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .mission-statement {
+        margin-top: 40px;
+        padding: 30px;
+        background-color: #f1f1f1;
+        border-radius: 8px;
+    }
+    .mission-statement h3 {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+    .collaboration {
+   background-color: #343a40;
+   color: white;
+
+    }
+    .scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 1px;
+
+}
+   .scroll-container img {
+  padding: 1px;
+  width: 50%;
+  height: 400px;
+  background-size: cover;
+  border: 1px solid red;
+background-color:#ffffff;
+}
+</style>
+
+<div class="about-container">
+    <h2>About Us</h2>
+    <p>At Street Animal Welfare, our mission is to provide care, support, and advocacy for street animals. Our team works tirelessly to rescue animals in distress, provide medical treatment, and find loving homes for them.</p>
+    <img src="{% static 'images/image_2.jpg' %}" alt="Our Mission">
+
+    <div class="mission-statement">
+        <h3>Our Mission</h3>
+        <p>Our goal is to create a world where every street animal is cared for and loved. We strive to raise awareness, provide resources, and mobilize the community to support this cause.</p>
+
+    </div>
+</div>
+    <div class="scroll-container">
+ <img src="{% static 'images/1637593744238.jpg' %}" alt="dog1">
+     <img src="{% static 'images/Street-Dogs.jpg' %}" alt="dog2">
+     <img src="{% static 'images/images.jpg' %}" alt="dog3">
+    <img src="{% static 'images/cow.jpg' %}" alt="cow">
+
+</div>
+
+
+
+{% endblock %}

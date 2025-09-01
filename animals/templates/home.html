@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+{%load static %}
+{% block content %}
+<style>
+    *{
+        color:black;
+        }
+    .hero-section {
+        background: url('/static/images/hero-bg.jpg') no-repeat center center/cover;
+        color: #ffffff;
+        padding: 60px 20px;
+        text-align: center;
+        /*border-bottom: 5px solid #007bff;*/
+    }
+    .hero-section h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: black;
+    }
+    .hero-section p {
+        font-size: 1.25rem;
+        margin-bottom: 30px;
+    }
+    .btn-hero {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
+    .image-section {
+        padding: 60px 20px;
+        text-align: center;
+    }
+    .image-section img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .about-us {
+        background-color: #f8f9fa;
+        padding: 60px 20px;
+        text-align: center;
+        background-image: url('https://blog.ipleaders.in/wp-content/uploads/2021/08/Animal_welfare_-_woman_pats_dog_1.jpg');
+        background-size: cover;
+        background-position: center;
+        height:700px;
+        border:2px solid;
+
+    }
+    .about-us h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .about-us p {
+        font-size: 1.125rem;
+        margin-bottom: 30px;
+    }
+    body {
+        background-image: url('https://shelbystreetanimalclinic.com/wp-content/uploads/2022/09/closeup-of-a-cute-kitten.jpg');
+        height: 600px;
+    }
+    ...
+    p{
+    color: #ffffff;
+    }
+
+
+
+</style>
+
+<div class="hero-section">
+    <h1>Welcome to Street Animal Welfare</h1>
+    <p>Dedicated to rescuing and caring for street animals in need.</p>
+    <a href="{% url 'donate' %}" class="btn btn-primary btn-hero" style="background-color:blue;color:white;">Donate Now</a>
+</div>
+
+<div class="image-section">
+    <h2>Our Work in Action</h2>
+    <img src="{% static 'images/image_1.jpg' %}" alt="Animal Rescue">
+</div>
+
+
+<div class="about-us">
+    <h2>What We Do</h2>
+    <p>We are committed to improving the lives of street animals through rescue operations, medical care, and community education. Join us in making a difference.</p>
+    <a href="{% url 'about' %}" class="btn btn-secondary btn-hero" style="background-color:blue;color:white;">Learn More</a>
+</div>
+{% endblock %}
